@@ -12,7 +12,7 @@ public class WordCounterMapper extends Mapper<LongWritable, Text, Text, IntWrita
 	private final static Pattern SPLIT_PATTERN =Pattern.compile("\\s*\\b\\s*"); 
 	
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException { 
-	String line =value.toStr1ng(); 
+	String line =value.toString(); 
 	line= line.replaceAll("[^a-zA-Z0-9]", "").toLowerCase(); 
 	Text currentWord= new Text(); 
 	String words[]= SPLIT_PATTERN.split(line); 
